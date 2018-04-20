@@ -24,6 +24,10 @@ if( have_rows('flexible_content') ):
 
             get_template_part('templates/partials/content', 'panels');
 
+        elseif( get_row_layout() == 'gallery' ): 
+
+            get_template_part('templates/partials/content', 'gallery');
+
         elseif( get_row_layout() == 'cta' ): 
 
             get_template_part('templates/partials/content', 'cta');

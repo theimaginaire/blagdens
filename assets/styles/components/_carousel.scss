@@ -1,18 +1,36 @@
+$carousel-height: 85vh;
+$mob-carousel: 50vh;
+
 .owl-carousel, .testimonials-carousel {
 	width: 100%;
 
 	// Styling items
 	.owl-item {
-		min-height: 60vh;
+		height: $carousel-height;
 		background-color: $lightgrey;
 		
 		.item {
+
 			max-width: 100%;
-			height: 60vh;
+			height: $carousel-height;
 			background-size: cover;
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			background-position: center;
+			flex-wrap: wrap;
+			.item-content {
+				color: #fff;
+				text-align: center;
+				z-index: 20;
+				@include fadeUp(1s);
+			}
+			
+		}
+	}
+	@include MQ(S){
+		.owl-item, .owl-item > .item {
+			height: $mob-carousel;
 		}
 	}
 
@@ -87,5 +105,26 @@
 				}
 			}
 		}
+	}
+}
+.more-info {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	bottom: 0.5rem;
+	align-self: flex-end;
+	z-index: 300;
+	width: 100%;
+	a {
+		color: #fff;
+		&:hover {
+			@include fadeUp(1s);
+			text-decoration: none;
+		}
+	}
+	.fa {
+		display: block;
+		font-size: 3rem;
 	}
 }

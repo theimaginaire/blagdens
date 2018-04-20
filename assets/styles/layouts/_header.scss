@@ -22,24 +22,64 @@
 }
 
 .logo {
-	width: calc(400px / 2);
+	width: calc(436px / 2);
 	height: auto;
 }
 
 .site-header {
+	background-color: $darkgrey;
+	color: #fff;
+	width: 100%;
+	height: 15vh;
 	.header-cta {
 		list-style: none;
 		padding: 0;
 		margin: 0;
-		li {
-			display: inline-block;
+		display: flex;
+		flex-wrap: no-wrap;
+		align-items: center;
+		li, li > a {
+			display: flex;
+			align-items: center;
 			&:not(:last-child){
-				margin-right: 1rem;
+				margin-right: 2rem;
 				@include MQ(S){
 					display: none;
 				}
 			}
 		}
+		li > a {
+			color: #fff;
+			&:hover {
+				color: $soft-copper;
+				text-decoration: none;
+				transition: $bezier;
+			}
+		}
+		.testimonials-header {
+			display: flex;
+			flex-wrap: wrap;
+
+			justify-content: center;
+			text-align: center;
+			.nc-icon {
+				margin-right: 0;
+				&:not(:last-of-type){
+					margin-right: 4px;
+				}
+				&:last-of-type {
+					margin-right: 1rem;
+				}
+			}
+			span {
+				display: block;
+			}
+		}
+	}
+	.nc-icon {
+		color: $soft-copper;
+		font-size: 1.2rem;
+		margin-right: 0.5rem;
 	}
 	.navbar-brand {
 		padding: 0;
@@ -48,7 +88,7 @@
 	.left, .right, .center-panel {
 		display: flex;
 		float: left;
-		min-height: 10vh;
+		min-height: 15vh;
 		width: 33.33333%;
 		align-items: center;
 	}
@@ -62,20 +102,33 @@
 		width: 100%;
 	}
 	@include MQ(S){
-		.left, .center-panel {
-			width: 50%;
+		.left, .center-panel, .right {
+			width: 33%;
 		}
-		.center-panel {
-			justify-content: flex-end;
-			float: right;
+	}
+}
+.menu-toggle, .phone-cta {
+	display: none;
+	@include MQ(S){
+		display: block;
+		width: 50px;
+		height: 50px;
+		background:none;
+		.fa, span {
+			color: $soft-copper;
 		}
-		.right {
-			position: fixed;
-			bottom: 0 !important;
-			width: 100% !important;
-			display: block !important;
+	}
+}
+.navbar {
+	width: 100%;
+	background-color: $mid-dark-grey;
+	font-family: $font-sec;
+	padding: 0 0.5rem;
+	li {
+		padding: 0 1rem;
+		a {
+			text-transform: uppercase;
 
 		}
-
 	}
 }

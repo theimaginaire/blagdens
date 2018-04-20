@@ -70,3 +70,38 @@ $L:     1170px;
   100% { transform: scale(0.6); }
 }
 
+@keyframes fadeUp {
+  0% {
+    bottom: -25px;
+    opacity: 0;
+  }
+  100% {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@mixin fadeUp($time){
+  position: relative;
+  animation: fadeUp $time $bezier 1 both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+@mixin nc-rotate($degrees, $rotation) {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=#{$rotation});
+  -webkit-transform: rotate($degrees);
+  -moz-transform: rotate($degrees);
+  -ms-transform: rotate($degrees);
+  -o-transform: rotate($degrees);
+  transform: rotate($degrees);
+}
+
+@mixin nc-flip($horiz, $vert, $rotation) {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=#{$rotation});
+  -webkit-transform: scale($horiz, $vert);
+  -moz-transform: scale($horiz, $vert);
+  -ms-transform: scale($horiz, $vert);
+  -o-transform: scale($horiz, $vert);
+  transform: scale($horiz, $vert);
+}

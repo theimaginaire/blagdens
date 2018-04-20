@@ -11,15 +11,24 @@ if( have_rows('carousel') ):
     // Individual carousel slide
 ?>
 <div class="item" style="background-image:url(<?php the_sub_field('background_image'); ?>);">
-<div class="item-content">
-	<?php the_sub_field('slide_content'); ?>
+    <div class="item-content">
+    	<?php the_sub_field('slide_content'); ?>
+    </div>
+    <div class="overlay"></div>
+
 </div>
-</div>
+
 <?php
     
     endwhile;
 ?>
 </section>
+<div class="more-info">
+    <a href="#main">
+        More Information
+        <i class="fa fa-angle-down"></i>
+    </a>
+</div>
 <?php
 elseif(get_field('hero_content')) :
 
