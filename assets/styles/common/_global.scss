@@ -20,10 +20,14 @@ body {
 		family: $font-primary; 
 	}
 	color: $text;
-	font-weight: 300;
+	font-weight: 400;
 	overflow-x: hidden;
 }
 
 ul {
 	margin-bottom: 0;
+}
+
+h1, h2, h3, h4 {
+	font-family: $font-sec;
 }

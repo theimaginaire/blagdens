@@ -100,7 +100,7 @@ function display_sidebar() {
  * Theme assets
  */
 function assets() {
-  wp_enqueue_style( 'google_fonts', '//fonts.googleapis.com/css?family=Open+Sans:300,500,700|Montserrat', false, null );
+  wp_enqueue_style( 'fonts', 'https://use.typekit.net/dhp7gld.css', false, null );
   wp_enqueue_style('sage/css', Assets\asset_path('styles/main.css'), false, null);
 
   if (is_single() && comments_open() && get_option('thread_comments')) {
